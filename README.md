@@ -1,2 +1,3 @@
 # thanhngan22.github.io
-:v: hallo, Ich bin thanhngan22 :wink:
+Hallo, ich bin thanhngan22.
+Ich komme aus Vietnam.
