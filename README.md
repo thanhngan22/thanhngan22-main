@@ -1,7 +1,7 @@
-# :see_no_evil: thanhngan22
+# 🙈 thanhngan22
 
-:v: Hallo, ich bin thanhngan22.
-:heavy_heart_exclamation: Ich komme aus Vietnam.
+✌️ Hallo, ich bin thanhngan22. </br>
+❣️ Ich komme aus Vietnam.
 
 ## 🧩 über mich
 
@@ -30,14 +30,9 @@
     end
 ```
 
-```mermaid
-    graph LR
-    A[this] --> B[webpage]
-    B --> C{is written}
-    C --> |using| D[Markdown]
-    C --> |just for| E[Fun :D]
-```
 
-🧩 Diese Webseite ist für den vorübergehenden Gebrauch, während sich meine offizielle Webseite im Aufbau befindet :stuck_out_tongue_winking_eye:
+<img src="./public/assets/img/grapLR.png"/>
+
+🧩 Diese Webseite ist für den vorübergehenden Gebrauch, während sich meine offizielle Webseite im Aufbau befindet 😜
 
 <h4> © thanhngan22  © </h4>
