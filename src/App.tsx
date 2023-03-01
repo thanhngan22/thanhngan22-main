@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navbar from './pages/common/navbar';
+import Footer from './pages/common/footer';
 
 import Home from './pages/Home';
 import Blog from './pages/Blog';
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home />} />          
         </Routes>
+        <Footer/>
       </Router>
     </div>
   );
