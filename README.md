@@ -1,7 +1,8 @@
 # 🙈 thanhngan22
 
-✌️ Hallo, ich bin thanhngan22. </br>
-❣️ Ich komme aus Vietnam.
+<p>✌️ Hallo, ich bin thanhngan22.</p> 
+<p>❣️ Ich komme aus Vietnam.</p>
+
 
 ## 🧩 über mich
 
