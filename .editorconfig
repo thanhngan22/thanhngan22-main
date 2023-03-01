@@ -1,0 +1,6 @@
+[*]  # apply to all files in the repo
+
+max_line_length = 88
+indent_style = tab
+bracket_same_line = false
+jsx_bracket_same_line = false
