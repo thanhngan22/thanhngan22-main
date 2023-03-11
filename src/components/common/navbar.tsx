@@ -1,26 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faBookOpen, faBlog, faPen, faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
+
 export default class Navbar extends React.Component {
     render () {
     return (
-        <div className = "Home-navbar bg-gray-200 h-12 w-4/12 rounded-full m-2">
+        <div className = "Home-navbar bg-black h-12 w-4/12 rounded-full border-white border">
             <ul className = "justify-around flex w-full h-full">
-                <li className="hover:bg-green-200 py-3  border-b-2  hover:border-pink-300 active:border-pink-200">
-                    <Link className="text-blue-500 py-3.5 px-3.5"  to = "/">Home</Link> 
+                <li className=" py-3    ">
+                    <Link className="nav-item text-white py-3.5 px-3.5 hover:text-black hover:bg-white active:text-blue-400 hover:py-2"  to = "/"
+                        ><FontAwesomeIcon className="nav-fav pr-2" icon={faHome} 
+                            /> Home
+                    </Link> 
                 </li>
-                <li className="hover:bg-green-200 py-3  border-b-2  hover:border-pink-300 active:border-pink-200">
-                    <Link className="text-blue-500 py-3.5 px-3.5"  to = "/docs">Docs</Link> 
+                <li className=" py-3    ">
+                    <Link className="nav-item text-white py-3.5 px-3.5 hover:text-black hover:bg-white active:text-blue-400 hover:py-2"  to = "/docs"
+                        ><FontAwesomeIcon className="nav-fav pr-2 " icon={faBookOpen} 
+                            /> Docs
+                    </Link> 
                     </li>
-                <li className="hover:bg-green-200 py-3  border-b-2  hover:border-pink-300 active:border-pink-200">
-                    <Link className="text-blue-500 py-3.5 px-3.5"  to = "/blog">Blog</Link> 
+                <li className=" py-3    ">
+                    <Link className="nav-item text-white py-3.5 px-3.5 hover:text-black hover:bg-white active:text-blue-400 hover:py-2"  to = "/blog"
+                        ><FontAwesomeIcon className="nav-fav pr-2 " icon={faBlog} 
+                            /> Blog
+                    </Link> 
                     </li>
-                <li className="hover:bg-green-200 py-3  border-b-2  hover:border-pink-300 active:border-pink-200">
-                    <Link className="text-blue-500 py-3.5 px-3.5"  to = "/writing">Writing</Link>
+                <li className=" py-3    ">
+                    <Link className="nav-item text-white py-3.5 px-3.5 hover:text-black hover:bg-white active:text-blue-400 hover:py-2"  to = "/writing"
+                        ><FontAwesomeIcon className="nav-fav pr-2" icon={faPen} 
+                            /> Writing
+                    </Link>
                     </li>
 
-                <li className="hover:bg-green-200 py-3  border-b-2  hover:border-pink-300 active:border-pink-200">
-                    <Link className="text-blue-500 py-3.5 px-3.5"  to = "/about">Study</Link> 
+                <li className=" py-3    ">
+                    <Link className="nav-item text-white py-3.5 px-3.5 hover:text-black hover:bg-white active:text-blue-400 hover:py-2"  to = "/about"
+                        ><FontAwesomeIcon className="nav-fav pr-2" icon={faUserAstronaut} 
+                            /> Study
+                    </Link> 
                     </li>
             </ul>
         </div>

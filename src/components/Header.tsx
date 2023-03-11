@@ -1,12 +1,10 @@
 import Navbar from "./common/navbar";
-import DisplayClock from "./common/clock";
 import LoginBar from "./common/loginBar";
 
 export default function Header() {
   return (
-    <div className="header flex justify-around">
+    <div className="header flex justify-between m-2">
       <Navbar />
-      <DisplayClock />
       <LoginBar />
     </div>
   );
