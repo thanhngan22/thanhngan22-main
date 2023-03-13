@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBookOpen, faBlog, faPen, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
 
-import handleChangePath from '../handleComps/handleChangePath';
+import handleChangePath from './handleComps/handleChangePath'
 
 export default class Navbar extends React.Component {
     constructor(props: any) {
@@ -43,7 +43,7 @@ export default class Navbar extends React.Component {
     return (
         <div className = "Home-navbar h-9 w-4/12 ">
             <ul className = "justify-around flex w-full ">
-                <li   className="nav__home py-1 self-center mt-1  " >
+                <li   className="nav__home py-1 self-center mt-1 -ml-5 " >
                     <Link onClick={this.handleClick}  className="px-1.5 py-2 text-gray-300 font-thin hover:bg-gray-700 hover:opacity-50 border border-black hover:border-gray-600   hover:rounded-sm"  to = "/"
                         ><FontAwesomeIcon className=" pr-2" icon={faHome} 
                             /> Home

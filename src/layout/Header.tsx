@@ -6,7 +6,7 @@ import Logo from "./headerComps/logo";
 
 export default function Header() {
   return (
-    <div className="header flex justify-between pl-8 ">
+    <div className="header flex justify-around  ">
       <Logo/>
       <Navbar />
       <SearchBar />
