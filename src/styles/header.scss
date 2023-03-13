@@ -13,7 +13,7 @@
 .Home-navbar ul li a[aria-current="page"]  {
     color: coral;
 
-    border-bottom: 1px solid coral;
+    border-bottom: 2px solid coral;
 }   
 
 
@@ -22,4 +22,21 @@
 .search-bar {
     
     
+}
+
+.header .logo__img {
+    width: 42px;
+    height: 40px;
+    border-radius: 50%;
+
+    background-image: url(../assets/img/logo.ico);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header .logo__text {
+    width: 200px;
+    height: 40px;
+    background-image: url("https://readme-typing-svg.herokuapp.com?font=Dancing+Script&size=24&pause=1000&color=F7D167&center=true&vCenter=true&width=200&height=40&lines=ponyo+and+sasuke");
 }

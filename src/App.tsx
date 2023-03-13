@@ -13,6 +13,8 @@ import Writing from './pages/Writing';
 import Study from './pages/Study';
 
 
+// create load bar same github
+
 function App() {
   return (
     <div className="App">
