@@ -1,0 +1,25 @@
+.header {
+    background-color: black;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    height: 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;  
+}
+
+
+.Home-navbar ul li a[aria-current="page"]  {
+    color: coral;
+
+    border-bottom: 1px solid coral;
+}   
+
+
+
+
+.search-bar {
+    
+    
+}
