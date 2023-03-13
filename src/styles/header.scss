@@ -10,11 +10,13 @@
 }
 
 
-.Home-navbar ul li[aria-current="page"] {
-    a {
-        color: green;
-    }
+.Home-navbar ul li a[aria-current="page"]  {
+    color: coral;
+
+    border-bottom: 1px solid coral;
 }   
+
+
 
 
 .search-bar {
