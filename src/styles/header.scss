@@ -9,11 +9,12 @@
     z-index: 100;  
 }
 
-.Home-navbar a[aria-current="page"] {
-    color: green;
-}
 
-    
+.Home-navbar ul li[aria-current="page"] {
+    a {
+        color: green;
+    }
+}   
 
 
 .search-bar {
