@@ -13,7 +13,7 @@
 .Home-navbar ul li a[aria-current="page"]  {
     color: coral;
 
-    border-bottom: 1px solid coral;
+    border-bottom: 2px solid coral;
 }   
 
 
@@ -22,4 +22,21 @@
 .search-bar {
     
     
+}
+
+.header .logo__img {
+    width: 42px;
+    height: 40px;
+    border-radius: 50%;
+
+    background-image: url(../assets/img/logo.ico);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header .logo__text {
+    width: 330px;
+    height: 40px;
+    background-image: url("https://readme-typing-svg.herokuapp.com?font=Dancing+Script&size=22&duration=3000&pause=500&color=F7E587&center=true&vCenter=true&repeat=false&width=330&height=40&lines=%E2%9C%8C%EF%B8%8F+hi+there+%F0%9F%8D%80;%F0%9F%91%8F+welcome+to+my+world+;%F0%9F%92%95+ponyo+and+sasuke+%F0%9F%92%95;%F0%9F%A7%90+let's+explore+what+my+world+has+%F0%9F%98%89;%C2%A9+thanhngan22+%C2%A9");
 }

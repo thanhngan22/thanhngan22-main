@@ -10,6 +10,7 @@ export default function handleChangePath (path: string, nav_links:HTMLAnchorElem
 
         if (href === path) {
             link.setAttribute("aria-current", "page");
+            link.classList.add("bg-gray-700", "opacity-50", "rounded-sm");
 
             // get svg icon of the link
             let icon = link.querySelector("svg");
@@ -18,18 +19,20 @@ export default function handleChangePath (path: string, nav_links:HTMLAnchorElem
             // set animation to the icon
             switch (icon?.getAttribute("data-icon")) {
                 case "house":
+                    icon.classList.add("fa-fade"); break;
                 case "pen" : 
-                        icon.classList.add("animate-bounce"); 
-                        break;
+                        icon.classList.add("fa-bounce"); break;
                 case "book-open":
+                    icon.classList.add("fa-flip"); break;
                 case "chalkboard-user":
+                    icon.classList.add("fa-beat-fade"); break;
                 case "blog" : 
-                        icon.classList.add("animate-pulse"); 
-                        break;
+                        icon.classList.add("fa-spin");  break;
             }
 
         } else {
             link.removeAttribute("aria-current");
+            link.classList.remove("bg-gray-700", "opacity-50", "rounded-sm");
             
             // get svg icon of the link
             let icon = link.querySelector("svg");
@@ -37,12 +40,15 @@ export default function handleChangePath (path: string, nav_links:HTMLAnchorElem
             // remove animate class from the icon
             switch (icon?.getAttribute("data-icon")) {
                 case "house":
+                    icon.classList.remove("fa-fade"); break;
                 case "pen" :
-                    icon.classList.remove("animate-bounce"); break;
+                    icon.classList.remove("fa-bounce"); break;
                 case "book-open":
+                    icon.classList.remove("fa-flip"); break;
                 case "chalkboard-user":
+                    icon.classList.remove("fa-beat-fade"); break;
                 case "blog" :
-                    icon.classList.remove("animate-pulse"); break;
+                    icon.classList.remove("fa-spin"); break;
             }
         }
 

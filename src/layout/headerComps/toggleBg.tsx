@@ -6,7 +6,7 @@ import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 export default function ToggleBg() {
   return (
     <div className="background flex">
-      <FontAwesomeIcon icon={faLightbulb} size="xl" className="self-center" />
+      {/* <FontAwesomeIcon icon={faLightbulb} size="xl" className="self-center text-white" /> */}
     </div>
   );
 }

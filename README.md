@@ -32,7 +32,7 @@
 ```
 
 
-<img src="./public/assets/img/grapLR.png"/>
+<img src="./src/assets/img/grapLR.png"/>
 
 🧩 Diese Webseite ist für den vorübergehenden Gebrauch, während sich meine offizielle Webseite im Aufbau befindet 😜
 

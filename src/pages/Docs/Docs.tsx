@@ -1,5 +1,7 @@
 export default function Docs () {
     return (
-        <h1>Docs</h1>
+        <div className = "Docs-page m-0 p-0 mt-8">
+            <h1 className="min-h-screen bg-black text-white">Docs</h1>
+        </div>
     )
 }
