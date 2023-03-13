@@ -11,7 +11,7 @@ import Blog from './pages/Blog';
 import Docs from './pages/Docs';
 import Writing from './pages/Writing';
 import Study from './pages/Study';
-
+import PageNotFound from './pages/404Page';
 
 // create load bar same github
 
@@ -26,7 +26,8 @@ function App() {
           <Route path="/docs" element={<Docs />} />
           <Route path="/writing" element={<Writing />} />
           <Route path="/study" element={<Study />} />
-          <Route path="/" element={<Home />} />          
+          <Route path="/" element={<Home />} />      
+          <Route path="*" element={<PageNotFound />} />    
         </Routes>
         <Footer/>
       </Router>
