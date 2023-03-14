@@ -8,7 +8,7 @@ export default class Writing extends React.Component {
         return (
             <Body
                 TabLeft = {() => <h1>Tab left</h1>}
-                BodyContent = {() => <h1>Body content</h1>}
+                BodyContent = {() => <h1>Writing</h1>}
                 TabRight = {() => <h1>Tab right</h1>}
             />
         )

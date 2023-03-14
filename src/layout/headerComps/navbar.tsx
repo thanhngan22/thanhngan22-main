@@ -29,7 +29,7 @@ export default class Navbar extends React.Component {
     handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         // get href of the link
         let href = e.currentTarget.getAttribute("href");
-        console.log(href);
+        // console.log(href);
 
         // get all the links in the navbar
         let navbar = document.querySelector(".Home-navbar");
