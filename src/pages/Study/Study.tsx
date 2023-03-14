@@ -1,13 +1,17 @@
 import React from 'react';
+import Body from '../../layout/Body';
 
-class Study extends React.Component {
-  render() {
-    return (
-      <div className = "Study-page m-0 p-0 mt-8">
-          <h1 className="min-h-screen bg-black text-white">Study</h1>
-      </div>
-  )
-  }
+export default class Study extends React.Component {
+    
+
+    render () {
+        return (
+            <Body
+                TabLeft = {() => <h1>Tab left</h1>}
+                BodyContent = {() => <h1>Body content</h1>}
+                TabRight = {() => <h1>Tab right</h1>}
+            />
+        )
+    }
+    
 }
-
-export default Study;

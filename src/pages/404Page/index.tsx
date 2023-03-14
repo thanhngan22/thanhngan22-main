@@ -1,7 +1,17 @@
-export default function PageNotFound () {
-    return (
-        <div className="min-h-screen bg-black text-white mt-10 pt-10">
-            <h1>Page not found</h1>
-        </div>
-    )
+import React from 'react';
+import Body from '../../layout/Body';
+
+export default class PageNotFound extends React.Component {
+    
+
+    render () {
+        return (
+            <Body
+                TabLeft = {() => <h1></h1>}
+                BodyContent = {() => <h1 className="mt-20">🤨 Đi lông nhông đâu dị chời 🤨</h1>}
+                TabRight = {() => <h1></h1>}
+            />
+        )
+    }
+    
 }

@@ -1,8 +1,34 @@
+import React from 'react';
+import Body from '../../layout/Body';
 
-export default function Home () {
-    return (
-        <div className = "Home-page m-0 p-0 mt-8">
-            <h1 className="min-h-screen bg-black text-white">Home</h1>
-        </div>
-    )
+import instance from '../../services/api';
+
+export default class Home extends React.Component {
+    handleData = () => {
+        instance.get('/api/users')
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.error(error);
+    });
+    }
+
+    render () {
+        return (
+            <Body
+                TabLeft = {() => <h1>Tab left</h1>}
+                BodyContent = {() => {
+                    return (
+                        <div>
+                            <h1 className="mt-20">🤨 Đi lông nhông đâu dị chời 🤨</h1>
+                            <button onClick={this.handleData}>Get data</button>
+                        </div>
+                    )
+                }}
+                TabRight = {() => <h1>Tab right</h1>}
+            />
+        )
+    }
+    
 }
