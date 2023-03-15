@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBookOpen, faBlog, faPen, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
 
-import handleChangePath from './handleComps/handleChangePath'
+import handleChangePath from './handleChangePath'
 
 export default class Navbar extends React.Component {
     constructor(props: any) {
