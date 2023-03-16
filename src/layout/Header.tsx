@@ -1,8 +1,8 @@
-import Navbar from "./headerComps/navbar";
-import LoginBar from "./headerComps/loginBar";
-import ToggleBg from "./headerComps/toggleBg";
-import SearchBar from "./headerComps/searchBar";
-import Logo from "./headerComps/logo";
+import Navbar from "../modules/header/navbar";
+import LoginBar from "../modules/header/loginBar";
+import ToggleBg from "../modules/header/toggleBg";
+import SearchBar from "../modules/header/searchBar";
+import Logo from "../modules/header/logo";
 
 export default function Header() {
   return (

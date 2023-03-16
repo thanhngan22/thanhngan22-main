@@ -7,18 +7,25 @@ import docsRoutes from './docs';
 import writingRoutes from './writing';
 import studyRoutes from './study';
 
+import Layout from '../layout';
 import ErrorPage from '../pages/ErrorPage';
 
 const router = createBrowserRouter ([
-    homeRoutes,
-    blogRoutes,
-    docsRoutes,
-    writingRoutes,
-    studyRoutes,
     {
-        path: '*',
-        element: <ErrorPage/>
-    },
+        path: "/",
+        element: <Layout/>,
+        children: [
+            homeRoutes,
+            blogRoutes,
+            docsRoutes,
+            writingRoutes,
+            studyRoutes,
+            {
+                path: '*',
+                element: <ErrorPage/>
+            },
+        ]
+    }
 ]);
 
 export default router;
