@@ -1,6 +1,8 @@
 import React from 'react';
 import Typed from 'typed.js';
 
+import MeshScence from 'modules/Threejs';
+
 // create signup page same as signup page of github
 
 export default function SignUp() {
@@ -23,6 +25,7 @@ export default function SignUp() {
 	return (
 		<div className="register bg-indigo-400 min-h-screen">
 			<span ref={el1} />
+			<MeshScence />
 		</div>
 	);
 }
