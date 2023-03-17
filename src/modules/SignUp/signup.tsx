@@ -57,7 +57,7 @@ export default function SignUp () {
 
                     </div>
 
-					<div className="form--group flex-col w-4/12 register--callout border-gray-700 border  rounded text-white text-sm m-auto justify-center mt-10">
+					<div className="form--group flex-col  register--callout border-gray-700 border  rounded text-white text-sm m-auto justify-center mt-10">
                                 <p className="mt-3 mb-3 text-gray-500">________or sign up with________</p>
 								<div className="register--callout__social flex justify-around mx-16 mb-3">
 									<div  className = "iconFB"/>
