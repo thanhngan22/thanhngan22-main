@@ -10,6 +10,9 @@ import studyRoutes from './study';
 import Layout from '../layout';
 import ErrorPage from '../pages/ErrorPage';
 
+import Login from "../modules/Login";
+import SignUp from "../modules/SignUp";
+
 const router = createBrowserRouter ([
     {
         path: "/",
@@ -25,6 +28,14 @@ const router = createBrowserRouter ([
                 element: <ErrorPage/>
             },
         ]
+    },
+    {
+        path: 'login/',
+        element: <Login />
+    },
+    {
+        path: 'register/',
+        element: <SignUp />
     }
 ]);
 
