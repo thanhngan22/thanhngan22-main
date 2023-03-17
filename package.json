@@ -26,9 +26,12 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
+    "react-three-fiber": "^6.0.13",
     "redux": "^4.2.1",
     "sass": "^1.59.3",
     "tailwindcss": "^3.2.7",
+    "three": "^0.150.1",
+    "typed.js": "^2.0.132",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -67,6 +70,7 @@
     }
   },
   "devDependencies": {
+    "@types/typed.js": "^2.0.9",
     "@types/webpack-env": "^1.18.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.35.0",
