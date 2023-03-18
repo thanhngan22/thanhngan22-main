@@ -10,7 +10,7 @@ export default function handleChangePath (path: string, nav_links:HTMLAnchorElem
 
         if (href === path) {
             link.setAttribute("aria-current", "page");
-            link.classList.add("bg-gray-700", "opacity-50", "rounded-sm");
+            link.classList.add("rounded-sm");
 
             // get svg icon of the link
             let icon = link.querySelector("svg");

@@ -6,7 +6,7 @@ interface BodyProps {
 
 export default function Body (content: BodyProps) {
     return (
-        <div className = "body flex ">
+        <div className = "body flex">
                 <div className="pt-10 tab__left pl-8 w-3/12 min-h-screen text-white">
                     {/* <h1 className="tab__left__title ">Tab left</h1> */}
                     <content.TabLeft />
