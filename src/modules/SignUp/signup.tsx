@@ -1,5 +1,6 @@
 import React from 'react';
 import Typed from 'typed.js';
+import instance from 'services/axios';
 
 export default function SignUp() {
 	// Create reference to store the DOM element containing the animation
@@ -17,19 +18,34 @@ export default function SignUp() {
 			typed.destroy();
 		};
 	}, []);
-	const registerFormData = (e:any) =>  {
-		e.preventDefault();
-		const container = document.querySelector('.register--auth__form')
-		const form = container?.querySelector('form')
-		if (form != null) {
-			const formData = new FormData(form);
-			for (const [key, value] of formData.entries()) {
-				console.log(`key: ${key}, value: ${value}`)
-			}
 
+	const handleSubmit = (e: any) => {
+		e.preventDefault();
+
+		const container = document.querySelector('.register--auth__form');
+		const form = container?.querySelector('form');
+		const formData = form ? new FormData(form) : new FormData();
+
+		interface Data {
+			[key: string]: any;
+		}
+		const data: Data = {};
+		console.log('data request: ');
+
+		for (const [key, value] of formData.entries()) {
+			console.log(`key: ${key}, value: ${value}`);
+			data[key] = value;
 		}
 
-	}
+		instance
+			.post('/api/auth/register', data)
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
 
 	return (
 		<div className="register--container w-full bg-gray-900 min-h-screen flex-col">
@@ -43,15 +59,26 @@ export default function SignUp() {
 			</div>
 			<div className="register--auth__form mt-3 ">
 				<div className="main--form  m-auto p-4 text-white  border border-gray-700 rounded">
-					<form >
+					<form>
 						<div className="form--group flex-col self-start">
 							<label htmlFor="username" className="text-sm mr-40 ">
 								Username{' '}
 							</label>
 							<input
 								type="text"
-								className="bg-gray-900 mt-2 mb-4 border-gray-600 border rounded w-11/12 pl-2"
+								className="Register__InputUsername bg-gray-900 mt-2 mb-4 border-gray-600 border rounded w-11/12 pl-2"
 								name="username"
+								onKeyDown={(e) => {
+									// prevent event submit form when enter
+									e.preventDefault()
+
+									if (e.key == 'ArrowDown' || e.key == 'Enter') {
+										const nextInput = document.querySelector(
+											'.Register__InputPassword'
+										) as HTMLInputElement;
+										nextInput?.focus();
+									}
+								}}
 							/>
 						</div>
 
@@ -61,8 +88,23 @@ export default function SignUp() {
 							</label>
 							<input
 								type="password"
-								className="bg-gray-900 mt-2 mb-4 border-gray-600 border rounded w-11/12 pl-2"
+								className="Register__InputPassword bg-gray-900 mt-2 mb-4 border-gray-600 border rounded w-11/12 pl-2"
 								name="password"
+								onKeyDown={(e) => {
+									e.preventDefault()
+
+									if (e.key == 'ArrowUp' ) {
+										const nextInput = document.querySelector(
+											'.Register__InputUsername'
+										) as HTMLInputElement;
+										nextInput?.focus();
+									} else if (e.key == 'ArrowDown' || e.key == 'Enter') {
+										const nextInput = document.querySelector(
+											'.Register__InputEmail'
+										) as HTMLInputElement;
+										nextInput?.focus();
+									}
+								}}
 							/>
 						</div>
 						<div className="form--group">
@@ -70,17 +112,39 @@ export default function SignUp() {
 								Email address
 							</label>
 							<input
-								type="text"
-								className="bg-gray-900 mt-2 mb-4 border-gray-600 border rounded w-11/12 pl-2"
+								type="email"
+								className="Register__InputEmail bg-gray-900 mt-2 mb-4 border-gray-600 border rounded w-11/12 pl-2"
 								name="email"
+								onKeyDown={(e) => {
+									e.preventDefault()
+									if (e.key == 'ArrowUp') {
+										const nextInput = document.querySelector(
+											'.Register__InputPassword'
+										) as HTMLInputElement;
+										nextInput?.focus();
+									} else if (e.key == 'ArrowDown' || e.key == 'Enter') {
+										const nextInput = document.querySelector(
+											'.Register__ButtonSubmit'
+										) as HTMLInputElement;
+										nextInput?.focus();
+									}
+								}}
 							/>
 						</div>
 
 						<div className="form--group">
 							<button
-								type="submit" 
-								className="bg-green-700 h-8 mt-4 font-medium text-sm border-gray-400 border rounded w-11/12"
-								onClick = {registerFormData}
+								type="submit"
+								className="Register__ButtonSubmit bg-green-700 h-8 mt-4 font-medium text-sm border-gray-400 border rounded w-11/12"
+								onClick={handleSubmit}
+								onKeyDown={(e) => {
+									if (e.key == 'ArrowUp') {
+										const nextInput = document.querySelector(
+											'.Register__InputEmail'
+										) as HTMLInputElement;
+										nextInput?.focus();
+									}
+								}}
 							>
 								Sign up
 							</button>

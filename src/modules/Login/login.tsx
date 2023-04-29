@@ -38,22 +38,22 @@ export default function Login() {
 		}
 	};
 
-	// const handleSubmit = (e: any) => {
-	// 	e.preventDefault();
-	// 	const data = {
-	// 		username: username,
-	// 		password: password,
-	// 	};
-	// 	console.log(data);
-	// 	instance
-	// 		.post('/api/auth/login', data)
-	// 		.then((response) => {
-	// 			console.log(response.data);
-	// 		})
-	// 		.catch((error) => {
-	// 			console.error(error);
-	// 		});
-	// };
+	const handleSubmit = (e: any) => {
+		e.preventDefault();
+		const data = {
+			username: username,
+			password: password,
+		};
+		console.log(data);
+		instance
+			.post('/api/auth/login', data)
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
 
 	return (
 		<div className="login--container w-full bg-gray-900 min-h-screen flex-col">
