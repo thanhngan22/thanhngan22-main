@@ -1,3 +1,4 @@
+@import 'variables';
 .body {
-    background-color: rgba(18, 16, 24, 0.957);
+    background-color: $body-bg-color;
 }

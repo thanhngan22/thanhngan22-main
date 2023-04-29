@@ -1,0 +1,21 @@
+.moon_Img_1 {
+    width: 600px;
+    height: 600px;
+    background-image: url('../assets/img/moon.jpg') ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.moon_Img_2 {
+    width: 600px;
+    height: 600px;
+    background-image: url('../assets/img/moon.jpg') ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(15px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}

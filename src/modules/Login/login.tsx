@@ -9,50 +9,51 @@ export default function Login() {
 
 	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
-		if (name === 'input_username') {
+		if (name === 'username') {
 			setUsername(value);
 		} else if (name === 'password') {
 			setPassword(value);
 		}
-        console.log("username: ", username);
-        console.log("password: ", password)
+		console.log('username: ', username);
+		console.log('password: ', password);
 	};
 
 	const handleShowHidePassword = () => {
 		const passwordType = document.getElementById('password')?.getAttribute('type');
 
-        // get eye icon
-        const eyeSlash = document.querySelector('.hide__password');
-        const eye = document.querySelector('.show__password');
+		// get eye icon
+		const eyeSlash = document.querySelector('.hide__password');
+		const eye = document.querySelector('.show__password');
 
 		if (passwordType === 'password') {
 			document.getElementById('password')?.setAttribute('type', 'text');
 			// change icon
-            eyeSlash?.classList.add('hidden');
-            eye?.classList.remove('hidden');
+			eyeSlash?.classList.add('hidden');
+			eye?.classList.remove('hidden');
 		} else {
 			document.getElementById('password')?.setAttribute('type', 'password');
 			// change icon
 			eyeSlash?.classList.remove('hidden');
-            eye?.classList.add('hidden');
+			eye?.classList.add('hidden');
 		}
 	};
 
-    const handleSubmit = (e :any ) => {
-        e.preventDefault();
-        const data = {
-            username: username,
-            password: password
-        }
-        console.log(data);
-        instance.post('/api/auth/login', data) 
-        .then(response => {
-            console.log(response.data);
-        })
-        .catch(error => {
-            console.error(error);
-        })
-    }
+	const handleSubmit = (e: any) => {
+		e.preventDefault();
+		const data = {
+			username: username,
+			password: password,
+		};
+		console.log(data);
+		instance
+			.post('/api/auth/login', data)
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
 
 	return (
 		<div className="login--container w-full bg-gray-900 min-h-screen flex-col">
@@ -64,7 +65,7 @@ export default function Login() {
 			</div>
 			<div className="login--auth__form  ">
 				<div className="main--form  m-auto p-4 text-white  border border-gray-700 rounded">
-					<form  action="/login" >
+					<form action="/api/auth/login">
 						<div className="form--group">
 							<label htmlFor="email" className="text-sm mr-20 ">
 								Username or email address
@@ -72,17 +73,18 @@ export default function Login() {
 							<input
 								type="text"
 								className="bg-gray-900 pl-1 mt-2 mb-4 border-gray-600 border rounded w-11/12 h-7 text-sm"
-								name="input_username"
+								name="username"
 								id="username"
 								value={username}
-                                onChange={handleOnChange}
+								onChange={handleOnChange}
 							/>
 						</div>
 						<div className="form--group">
 							<label htmlFor="password" className="text-sm mr-24">
 								Password
 							</label>
-							<a href="/reset_password"
+							<a
+								href="/reset_password"
 								className="forgot--password text-xs text-blue-600 "
 							>
 								Forgot password?
@@ -93,8 +95,8 @@ export default function Login() {
 									className=" bg-gray-900 pl-1 relative mt-2 border-gray-600 border rounded w-11/12 h-7 text-xs"
 									name="password"
 									id="password"
-                                    value={password}
-                                    onChange={handleOnChange}
+									value={password}
+									onChange={handleOnChange}
 								/>
 								<div>
 									<FontAwesomeIcon
@@ -102,7 +104,7 @@ export default function Login() {
 										onClick={handleShowHidePassword}
 										className=" hide__password text-gray-500  text-xs cursor-pointer absolute ml-24 -mt-5"
 									/>
-                                    <FontAwesomeIcon
+									<FontAwesomeIcon
 										icon={faEye}
 										onClick={handleShowHidePassword}
 										className=" show__password hidden text-gray-500  text-xs cursor-pointer absolute ml-24 -mt-5"
@@ -113,8 +115,8 @@ export default function Login() {
 						<div className="form--group">
 							<button
 								type="submit"
-								className="bg-green-700 h-8 mt-4 font-medium text-sm border-gray-400 border rounded w-11/12"  
-                                onClick={handleSubmit}
+								className="bg-green-700 h-8 mt-4 font-medium text-sm border-gray-400 border rounded w-11/12"
+								// onClick={handleSubmit}
 							>
 								Sign in
 							</button>
