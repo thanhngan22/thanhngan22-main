@@ -49,12 +49,12 @@ export default class Navbar extends React.Component {
                             /> Home
                     </Link> 
                 </li>
-                <li  className="nav__docs py-1 self-center mt-1    ">
+                {/* <li  className="nav__docs py-1 self-center mt-1    ">
                     <Link onClick={this.handleClick} className="px-1.5 py-2 text-gray-300 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/docs"
                         ><FontAwesomeIcon className=" pr-2 " icon={faBookOpen} 
                             /> Docs
                     </Link> 
-                    </li>
+                    </li> */}
                 <li  className="nav__blog py-1 self-center mt-1    ">
                     <Link onClick={this.handleClick} className="px-2 py-2 text-gray-300 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/blog"
                         ><FontAwesomeIcon className=" pr-3 " icon={faBlog} 
@@ -68,12 +68,12 @@ export default class Navbar extends React.Component {
                     </Link>
                     </li>
 
-                <li  className="nav__study py-1 self-center mt-1    ">
+                {/* <li  className="nav__study py-1 self-center mt-1    ">
                     <Link onClick={this.handleClick} className="px-1.5 py-2 text-gray-300 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/study"
                         ><FontAwesomeIcon className=" pr-2" icon={faChalkboardTeacher} 
                             /> Study
                     </Link> 
-                    </li>
+                    </li> */}
             </ul>
         </div>
     )
