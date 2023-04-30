@@ -81,7 +81,7 @@ export default function Login() {
 				console.log('response data: ', response.status);
 				if (response.status == 200) {
 					console.log('Navigate to dashboard')
-					navigate("/home");
+					navigate("/dashboard");
 				}
 			})
 			.catch((error) => {
