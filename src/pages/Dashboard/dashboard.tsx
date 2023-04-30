@@ -5,9 +5,11 @@ import DashUser from "./components/dashUser";
 import instance from "services/axios";
 import { useNavigate } from "react-router-dom";
 
-export default class DashBoard extends React.Component {
+export default function DashBoard () {
+    const navigate = useNavigate()
 
-    changeColorOfNavItem = () => {
+
+    const changeColorOfNavItem = () => {
         const items = document.querySelectorAll('.nav__item')
         // console.log(items)
         for (const item of items) {
@@ -16,7 +18,7 @@ export default class DashBoard extends React.Component {
         }
     }
 
-    handleSubmit = (e : any) => {
+    const handleSubmit = (e : any) => {
         e.preventDefault()
         const element = document.querySelector('.Blog__Create');
         const authorInput = element?.querySelector('.Post__Author') as HTMLInputElement
@@ -28,11 +30,10 @@ export default class DashBoard extends React.Component {
         }
         console.log('submitting  with data:  ', data)
         instance
-            .post('/api/blog/createBlog', data )
+            .post('/api/blog/createPost', data )
             .then((res) => {
                 if (res.status == 200) {
-                prompt('create blog success')
-                const navigate = useNavigate()
+                prompt('create blog success', res.data)
                 navigate("/dashboard")
                 }
             })
@@ -41,11 +42,8 @@ export default class DashBoard extends React.Component {
             })
     }
 
-    componentDidMount(): void {
-        this.changeColorOfNavItem()
-    }
+    changeColorOfNavItem()
 
-   render () {
     return (
         <div className="dashboard">
             <div className="nav bg-green-500 flex justify-between">
@@ -59,10 +57,9 @@ export default class DashBoard extends React.Component {
                 <label htmlFor="content">Content:</label>
                 <input type="text"  className="Post__Content ml-8 w-40 h-6 mt-4  border border-gray-300 rounded"/>
                 <div/>
-                <button type="submit" className="mt-5 ml-8 border border-blue-500 bg-green-300" onClick={(e) => this.handleSubmit(e)}>Submit</button>
+                <button type="submit" className="mt-5 ml-8 border border-blue-500 bg-green-300" onClick={(e) => handleSubmit(e)}>Submit</button>
             </div>
         </div>
         
     )
-   }
 }
