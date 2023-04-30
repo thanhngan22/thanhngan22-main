@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import instance from 'services/axios';
+import { useNavigate } from "react-router-dom";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 export default function Login() {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
+	const navigate = useNavigate();
 
 	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
@@ -16,6 +19,32 @@ export default function Login() {
 		}
 		console.log('username: ', username);
 		console.log('password: ', password);
+	};
+
+	const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, id: number) => {
+		const listInputToFocus = [
+			'.Login__Username',
+			'.Login__Username',
+			'.Login__Password',
+			'.Login__Button',
+		];
+		console.log('You just pressed a key board ');
+		if (e.key == 'Enter') {
+			e.preventDefault();
+		}
+		if (e.key == 'ArrowDown' || e.key == 'Enter') {
+			const nextInput = document.querySelector(
+				listInputToFocus[id + 1]
+			) as HTMLInputElement;
+			nextInput?.focus();
+		} else {
+			if (e.key == 'ArrowUp') {
+				const nextInput = document.querySelector(
+					listInputToFocus[id - 1]
+				) as HTMLInputElement;
+				nextInput?.focus();
+			}
+		}
 	};
 
 	const handleShowHidePassword = () => {
@@ -40,18 +69,23 @@ export default function Login() {
 
 	const handleSubmit = (e: any) => {
 		e.preventDefault();
+		// console.log(e);
 		const data = {
 			username: username,
 			password: password,
 		};
-		console.log(data);
+		console.log('data when submit:' , data);
 		instance
 			.post('/api/auth/login', data)
 			.then((response) => {
-				console.log(response.data);
+				console.log('response data: ', response.status);
+				if (response.status == 200) {
+					console.log('Navigate to dashboard')
+					navigate("/home");
+				}
 			})
 			.catch((error) => {
-				console.error(error);
+				console.error('error submit: ', error);
 			});
 	};
 
@@ -65,18 +99,19 @@ export default function Login() {
 			</div>
 			<div className="login--auth__form  ">
 				<div className="main--form  m-auto p-4 text-white  border border-gray-700 rounded">
-					<form action="/api/auth/login">
+					<form>
 						<div className="form--group">
 							<label htmlFor="email" className="text-sm mr-20 ">
 								Username or email address
 							</label>
 							<input
 								type="text"
-								className="bg-gray-900 pl-1 mt-2 mb-4 border-gray-600 border rounded w-11/12 h-7 text-sm"
+								className="Login__Username bg-gray-900 pl-1 mt-2 mb-4 border-gray-600 border rounded w-11/12 h-7 text-sm"
 								name="username"
 								id="username"
+								onChange={(event) => handleOnChange(event)}
+								onKeyDown={(e) => handleOnKeyDown(e, 1)}
 								value={username}
-								onChange={handleOnChange}
 							/>
 						</div>
 						<div className="form--group">
@@ -92,11 +127,12 @@ export default function Login() {
 							<div className="">
 								<input
 									type="password"
-									className=" bg-gray-900 pl-1 relative mt-2 border-gray-600 border rounded w-11/12 h-7 text-xs"
+									className=" Login__Password bg-gray-900 pl-1 relative mt-2 border-gray-600 border rounded w-11/12 h-7 text-xs"
 									name="password"
 									id="password"
+									onChange={(event) => handleOnChange(event)}
+									onKeyDown={(e) => handleOnKeyDown(e, 2)}
 									value={password}
-									onChange={handleOnChange}
 								/>
 								<div>
 									<FontAwesomeIcon
@@ -115,8 +151,8 @@ export default function Login() {
 						<div className="form--group">
 							<button
 								type="submit"
-								className="bg-green-700 h-8 mt-4 font-medium text-sm border-gray-400 border rounded w-11/12"
-								// onClick={handleSubmit}
+								className="Login__Button bg-green-700 h-8 mt-4 font-medium text-sm border-gray-400 border rounded w-11/12"
+								onClick={handleSubmit}
 							>
 								Sign in
 							</button>
