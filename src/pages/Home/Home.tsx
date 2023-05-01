@@ -17,19 +17,9 @@ export default class Home extends React.Component {
 
     render () {
         return (
-            <Body
-                TabLeft = {() => <h1></h1>}
-                BodyContent = {() => {
-                    return (
-                        <div className='mt-40'>
-
-
-
-                        </div>
-                    )
-                }}
-                TabRight = {() => <h1></h1>}
-            />
+           <div>
+            page home
+           </div>
         )
     }
     

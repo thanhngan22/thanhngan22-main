@@ -12,6 +12,7 @@ import ErrorPage from '../pages/ErrorPage';
 
 import Login from "../modules/Login";
 import SignUp from "../modules/SignUp";
+import DashBoard from 'pages/Dashboard/dashboard';
 
 const router = createBrowserRouter ([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter ([
     {
         path: 'register/',
         element: <SignUp />
+    },
+    {
+        path: '/dashboard',
+        element: <DashBoard/>
     }
 ]);
 

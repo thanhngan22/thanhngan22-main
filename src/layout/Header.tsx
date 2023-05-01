@@ -11,6 +11,7 @@ export default function Header() {
       <Navbar />
       <SearchBar />
       <ToggleBg />
+      {/* check if logged in :  change login bar */}
       <LoginBar />
     </div>
   );
