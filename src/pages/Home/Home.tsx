@@ -18,6 +18,7 @@ export default class Home extends React.Component {
     render () {
         return (
            <div>
+            <Body/>
             page home
            </div>
         )

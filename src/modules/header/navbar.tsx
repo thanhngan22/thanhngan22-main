@@ -68,12 +68,12 @@ export default class Navbar extends React.Component {
                     </Link>
                     </li>
 
-                {/* <li  className="nav__study py-1 self-center mt-1    ">
-                    <Link onClick={this.handleClick} className="px-1.5 py-2 text-gray-300 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/study"
+                <li  className="nav__study py-1 self-center mt-1    ">
+                    <Link onClick={this.handleClick} className="px-1.5 py-2 text-gray-300 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/collections"
                         ><FontAwesomeIcon className=" pr-2" icon={faChalkboardTeacher} 
-                            /> Study
+                            /> Collections
                     </Link> 
-                    </li> */}
+                    </li>
             </ul>
         </div>
     )
