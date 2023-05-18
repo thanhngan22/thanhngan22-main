@@ -5,21 +5,12 @@ import instance from '../../services/axios';
 // import moonImg from '../../assets/img/moon.jpg';
 
 export default class Home extends React.Component {
-    handleData = () => {
-        instance.get('/api/users')
-        .then(response => {
-            console.log(response.data);
-        })
-        .catch(error => {
-            console.error(error);
-    });
-    }
+    
 
     render () {
         return (
-           <div>
-            <Body/>
-            page home
+           <div className="body__home ">
+            <canvas id="star-canvas"></canvas>
            </div>
         )
     }

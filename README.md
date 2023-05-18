@@ -1,4 +1,4 @@
-# 🙈 thanhngan22
+<!-- # 🙈 thanhngan22
 
 <p>✌️ Hallo, ich bin thanhngan22.</p> 
 <p>❣️ Ich komme aus Vietnam.</p>
@@ -35,5 +35,12 @@
 <img src="./src/assets/img/grapLR.png"/>
 
 🧩 Diese Webseite ist für den vorübergehenden Gebrauch, während sich meine offizielle Webseite im Aufbau befindet 😜
+
+<h4> © thanhngan22  © </h4> -->
+
+
+### Some things I learned through this project
+
+
 
 <h4> © thanhngan22  © </h4>

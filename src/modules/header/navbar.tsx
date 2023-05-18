@@ -43,8 +43,8 @@ export default class Navbar extends React.Component {
     return (
         <div className = "Home-navbar h-9 w-4/12 ">
             <ul className = "justify-around flex w-full ">
-                <li   className="nav__item py-1 self-center mt-1 -ml-5 " >
-                    <Link onClick={this.handleClick}  className="px-1.5 py-2 text-gray-300 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/"
+                <li   className="nav__item self-center mt-1 -ml-5 " >
+                    <Link onClick={this.handleClick}  className="px-1.5 py-2 text-gray-700 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/"
                         ><FontAwesomeIcon className=" pr-2" icon={faHome} 
                             /> Home
                     </Link> 
@@ -56,22 +56,19 @@ export default class Navbar extends React.Component {
                     </Link> 
                     </li> */}
                 <li  className="nav__item py-1 self-center mt-1    ">
-                    <Link onClick={this.handleClick} className="px-2 py-2 text-gray-300 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/blog"
-                        ><FontAwesomeIcon className=" pr-3 " icon={faBlog} 
-                            /> Blog
+                    <Link onClick={this.handleClick} className="px-4 py-2 text-gray-700 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/blog"
+                        > Blog
                     </Link> 
                     </li>
                 <li  className="nav__item py-1 self-center mt-1    ">
-                    <Link onClick={this.handleClick} className="px-1.5 py-2 text-gray-300 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/writing"
-                        ><FontAwesomeIcon className=" pr-1" icon={faPen} 
-                            /> Writing
+                    <Link onClick={this.handleClick} className="px-3 py-2 text-gray-700 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/writing"
+                        > Writing
                     </Link>
                     </li>
 
                 <li  className="nav__study py-1 self-center mt-1    ">
-                    <Link onClick={this.handleClick} className="px-1.5 py-2 text-gray-300 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/collections"
-                        ><FontAwesomeIcon className=" pr-2" icon={faChalkboardTeacher} 
-                            /> Collections
+                    <Link onClick={this.handleClick} className="px-1.5 py-2 text-gray-700 font-thin border  hover:border-gray-600   hover:rounded-sm"  to = "/collections"
+                        > Collections
                     </Link> 
                     </li>
             </ul>

@@ -9,7 +9,7 @@ export default function Header() {
     <div className="header flex justify-around  ">
       <Logo/>
       <Navbar />
-      <SearchBar />
+      {/* <SearchBar /> */}
       <ToggleBg />
       {/* check if logged in :  change login bar */}
       <LoginBar />
